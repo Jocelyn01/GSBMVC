@@ -16,6 +16,9 @@
               <a href="index.php?uc=gererFrais&action=saisirFrais" title="Saisie fiche de frais ">Saisie fiche de frais</a>
            </li>
            <li class="smenu">
+              <a href="index.php?uc=etatFrais&action=validerfichefrais" title="Valider mes fiches de frais">Valider mes fiches de frais</a>
+           </li>
+           <li class="smenu">
               <a href="index.php?uc=etatFrais&action=selectionnerMois" title="Consultation de mes fiches de frais">Mes fiches de frais</a>
            </li>
  	   <li class="smenu">
