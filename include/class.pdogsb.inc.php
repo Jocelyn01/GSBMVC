@@ -63,7 +63,7 @@ class PdoGsb{
                 else
                 {
                     $LoginTab = $rs -> fetch();
-                    if($LoginTab['type']=="")
+                    if($LoginTab['type']== "")//Modifications apportées
                     {
                         $ligne = false;
                     }
