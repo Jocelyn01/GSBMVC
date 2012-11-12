@@ -56,25 +56,32 @@ class PdoGsb{
 	public function getInfosVisiteur($login, $mdp){
 		$req = "select type from utilisateur where login='".$login."' and mdp = '".$mdp."'";
 		$rs = PdoGsb::$monPdo->query($req);
-                if($rs==false)
+                if(!$rs)
                 {
                     $ligne = false;
                 }
                 else
                 {
                     $LoginTab = $rs -> fetch();
-                    if($LoginTab['type']=="V")
+                    if($LoginTab['type']=="")
                     {
-                        $type = "visiteur";
+                        $ligne = false;
                     }
-                    else if($LoginTab['type']=="C")
+                    else
                     {
-                        $type = "gestionnaire";
+                        if($LoginTab['type']=="V")
+                        {
+                            $type = "visiteur";
+                        }
+                        else if($LoginTab['type']=="C")
+                        {
+                            $type = "gestionnaire";
+                        }
+                        $req1 = "select id, nom, prenom from " .$type. " where login='".$login."'";
+                        $rs1 = PdoGsb::$monPdo->query($req1);
+                        $ligne = $rs1->fetch();
+                        $ligne ['type']=$type;
                     }
-                    $req1 = "select id, nom, prenom from " .$type. " where login='".$login."'";
-                    $rs1 = PdoGsb::$monPdo->query($req1);
-                    $ligne = $rs1->fetch();
-                    $ligne ['type']=$type;
                 }
                 return $ligne;
 		
