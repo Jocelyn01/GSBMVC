@@ -17,7 +17,7 @@
            </li>
            <li class="smenu">
               <a href="index.php?uc=etatFrais&action=validerfichefrais" title="Valider mes fiches de frais">Valider mes fiches de frais</a>
-           </li>f
+           </li>
            <li class="smenu">
               <a href="index.php?uc=etatFrais&action=selectionnerMois" title="Consultation de mes fiches de frais">Mes fiches de frais</a>
            </li>
